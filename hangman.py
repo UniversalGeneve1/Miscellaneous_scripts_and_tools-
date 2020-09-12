@@ -1,10 +1,5 @@
 #hangman in python
-"""
-*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
-ADD MORE / REPLACE WORDS INSIDE THE BRACKETS BELOW, SEPARATED BY COMMAS
-*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
-"""
-#add more words here!
+#ADD MORE / REPLACE WORDS INSIDE THE BRACKETS BELOW, SEPARATED BY COMMAS
 words = ["apple", "banana", "carrot"]
 ## IMPORTS:
 #import pandas as pd 
@@ -17,13 +12,11 @@ def slow_printer(s,t):
 		sys.stdout.write(c)
 		sys.stdout.flush()
 		sleep(t)
-
-
 ## SETUP:
 image_1= """ 
                     ____________
-                    |          |
-                    |          |
+                    |          :
+                    |          :
                     |          
                     |         
                     |		   
@@ -36,8 +29,8 @@ image_1= """
                 |_______________________|/ """
 image_2 = """ 
                     ____________
-                    |          |
-                    |          |
+                    |          :
+                    |          :
                     |          @
                     |         
                     |		   
@@ -50,8 +43,8 @@ image_2 = """
                 |_______________________|/"""
 image_3 = """ 
                     ____________
-                    |          |
-                    |          |
+                    |          :
+                    |          :
                     |          @
                     |          |
                     |		   
@@ -64,8 +57,8 @@ image_3 = """
                 |_______________________|/"""
 image_4 = """ 
                     ____________
-                    |          |
-                    |          |
+                    |          :
+                    |          :
                     |          @
                     |         /|
                     |		   
@@ -78,8 +71,8 @@ image_4 = """
                 |_______________________|/"""
 image_5 = """ 
                     ____________
-                    |          |
-                    |          |
+                    |          :
+                    |          :
                     |          @
                     |         /|\\
                     |		   
@@ -92,8 +85,8 @@ image_5 = """
                 |_______________________|/"""
 image_6 = """ 
                     ____________
-                    |          |
-                    |          |
+                    |          :
+                    |          :
                     |          @
                     |         /|\\
                     |          |
@@ -106,8 +99,8 @@ image_6 = """
                 |_______________________|/"""
 image_7 = """ 
                     ____________
-                    |          |
-                    |          |
+                    |          :
+                    |          :
                     |          @
                     |         /|\\
                     |          |
@@ -120,8 +113,8 @@ image_7 = """
                 |_______________________|/"""
 image_final = """ 
                     ____________
-                    |          |
-                    |          |
+                    |          :
+                    |          :
                     |          @
                     |         /|\\
                     |          |
@@ -138,10 +131,15 @@ words = [word.lower() for word in words]
 ##########
 ## MAIN ##
 ##########
-curr_game_word = list(random.choice(words))
+word = random.choice(words)
+curr_game_word = list(word)
 curr_img_state = image_generator.__next__()
 letterboard = "_ " * len(curr_game_word)
 prev_guesses = []
+
+slow_printer("W E L C O M E   T O\n", 0.05)
+slow_printer("   H A N G M A N   \n", 0.05)
+sleep(1)
 
 print(curr_img_state)
 print(letterboard)
@@ -190,6 +188,8 @@ while True:
 			print(image_final)
 			print()
 			print("It seems that your luck has run dry...\n")
+			sleep(0.5)
+			print(f"The correct answer was: {word.upper()}\n")
 			sleep(1.2)
 			slow_printer("(X.X) (X.X) (X.X) (X.X) (X.X)\n", 0.03)
 			slow_printer("(X.X) G A M E   O V E R (X.X)\n", 0.03)
