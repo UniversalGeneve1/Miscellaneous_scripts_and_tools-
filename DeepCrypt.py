@@ -68,4 +68,5 @@ def DeepCrypt(phrase, key):
 if __name__ == "__main__":
   phrase = input("Phrase to Encrypt >>> ")
   key = input("Encrypting key >>> ")
-  print(DeepCrypt(phrase, key))
+  dc = DeepCrypt(phrase, key)
+  print(dc,"; L: ", len(dc))

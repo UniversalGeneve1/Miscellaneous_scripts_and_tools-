@@ -27,19 +27,19 @@ def cipher(key):
 
   def cipher_tool(phrase):
     phrase = list(phrase.lower())
+    return_string = ""
     for i in range(len(phrase)):
       if phrase[i].isalpha() == False:
         continue
       else:
-        phrase[i] = reverse_dict[forward_dict[phrase[i]]]
+        return_string += reverse_dict[forward_dict[phrase[i]]]
       
-    phrase = "".join(phrase)
     #debugging:
-    #print(phrase)
-    return phrase
+    #print(return_string)
+    return return_string
 
   return cipher_tool
 
 
-cyphtool = cipher("")
-print(cyphtool("")) 
+cyphtool = cipher("volumetric")
+print(cyphtool("We'll play Nintendo, though I always lose, cuz' you'll watch the TV, while I'm watching you")) 
